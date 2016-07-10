@@ -19,6 +19,7 @@ from scipy.special import expit
 # I/O Handlers
 #####################################################################
 
+# Read a data file as a csv file and return an nparray
 def readData(filepath):
     data = []
     with open(filepath, 'rb') as dataFile:
@@ -119,7 +120,6 @@ def getGaussNewton(x, *args):
 #####################################################################
 
 def main():
-    readData("data/test.csv")
     exit()
 
 if __name__ == "__main__":
