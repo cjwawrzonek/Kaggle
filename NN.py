@@ -10,9 +10,12 @@ import numpy as np
 from sklearn.neighbors import NearestNeighbors
 
 def NNmodel():
-	# data = util.readData('data/test.csv')
+	data = util.readTrainData('data/train.csv')
 
-	# nbrs = NearestNeighbors(n_neighbors=2, algorithm='ball_tree').fit(data)
+	y = data[:,0]
+	x = data[1:, :]
+
+	nbrs = NearestNeighbors(n_neighbors=2, algorithm='ball_tree').fit(data)
 
 def main():
     NNmodel()

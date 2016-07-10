@@ -16,12 +16,18 @@ from pprint import pprint
 from scipy.special import expit
 
 #####################################################################
-# Data Handlers
+# I/O Handlers
 #####################################################################
 
-def readData(fileString):
-    # csvfile = open(fileString, 'rb')
-    # data = csv.reader(csvfile, delimiter=',', quotechar='|')
+def readTrainData(filepath):
+    data = []
+    with open(filepath, 'rb') as dataFile:
+        dataReader = csv.reader(dataFile, delimiter = ',')
+        dataReader.next()
+        for row in dataReader:
+            data.append(row)
+        data = np.array(data)
+        return data.astype(np.int)
 
 #####################################################################
 # Stats functions
