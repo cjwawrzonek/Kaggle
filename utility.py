@@ -7,7 +7,9 @@ import pickle
 import random
 import math
 import sys
+import csv
 
+import pandas as pd
 import numpy as np
 
 from pprint import pprint
@@ -17,8 +19,9 @@ from scipy.special import expit
 # Data Handlers
 #####################################################################
 
-def readData(file):
-    pass
+def readData(fileString):
+    # csvfile = open(fileString, 'rb')
+    # data = csv.reader(csvfile, delimiter=',', quotechar='|')
 
 #####################################################################
 # Stats functions
@@ -110,9 +113,7 @@ def getGaussNewton(x, *args):
 #####################################################################
 
 def main():
-    x = [1, .9, .8, 1]
-
-    print dExpit(x)
+    readData("data/test.csv")
     exit()
 
 if __name__ == "__main__":
