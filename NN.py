@@ -7,15 +7,26 @@ import sys
 import utility as util
 import numpy as np
 
-from sklearn.neighbors import NearestNeighbors
+from sklearn.neighbors import KNeighborsClassifier
 
 def NNmodel():
-	data = util.readTrainData('data/train.csv')
+	traindata = util.readData('data/train.csv')
 
-	y = data[:,0]
-	x = data[1:, :]
+	y = traindata[0:23999, 0]
+	x = traindata[0:23999, 1:]
 
-	nbrs = NearestNeighbors(n_neighbors=2, algorithm='ball_tree').fit(data)
+	y2 = traindata[24000: ,0]
+	x2 = traindata[24000:, 1:]
+
+	print "Got here"
+
+	knbrs = KNeighborsClassifier(n_neighbors=3)
+	knbrs.fit(x, y) 
+
+	y_pred = knbrs.predict(x2)
+
+	print y2[0:10]
+	print y_pred[0:10]
 
 def main():
     NNmodel()

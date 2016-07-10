@@ -19,7 +19,7 @@ from scipy.special import expit
 # I/O Handlers
 #####################################################################
 
-def readTrainData(filepath):
+def readData(filepath):
     data = []
     with open(filepath, 'rb') as dataFile:
         dataReader = csv.reader(dataFile, delimiter = ',')
