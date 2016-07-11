@@ -25,9 +25,13 @@ def NNmodel():
 	print "Got here"
 
 	knbrs = KNeighborsClassifier(n_neighbors=3)
-	knbrs.fit(x, y) 
+	knbrs.fit(x, y)
+
+	print "Neighbors fit"
 
 	y_pred = knbrs.predict(x2)
+
+	print "Predictions made"
 
 	print y2[0:10]
 	print y_pred[0:10]
