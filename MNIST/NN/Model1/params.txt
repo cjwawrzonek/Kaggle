@@ -1,4 +1,0 @@
-param1			10000
-param2			2
-param3			sex
-param4			{this:{dictionary:7}}
