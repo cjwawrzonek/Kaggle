@@ -1,5 +1,5 @@
 {
-	"description": "attention experiment",
+	"comments": "Sample JSON File",
 	"directory": "experiments/attention1",
 	"type": "attention",
 	"total_length": 18,
