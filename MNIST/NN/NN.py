@@ -10,17 +10,18 @@ import sys
 
 import utility as util
 import numpy as np
+import model as md
 
 from sklearn.neighbors import KNeighborsClassifier
 
-def NNmodel():
-	traindata = util.readData('data/train.csv')
+def NNmodel(modelpath=None):
+	train = util.readData('data/train.csv')
 
-	y = traindata[0:23999, 0]
-	x = traindata[0:23999, 1:]
+	y = train[0:23999, 0]
+	x = train[0:23999, 1:]
 
-	y2 = traindata[24000: ,0]
-	x2 = traindata[24000:, 1:]
+	y2 = train[24000: ,0]
+	x2 = train[24000:, 1:]
 
 	print "Got here"
 
