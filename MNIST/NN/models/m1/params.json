@@ -1,0 +1,4 @@
+{
+	"description": "This is a Nearest Neighbors algorithm, model v1",
+	"num_neighbors": 3
+}

@@ -5,56 +5,51 @@
 #!/usr/bin/python
 # Filename: model.py
 
-import numpy as np
+import json
 import math
 import sys
 import json
+from pprint import pprint
+
+import numpy as np
 
 class model:
-	'''experiment variables'''
+	'''model variables'''
 	# None at the moment
 
-	def __init__(self, name="Default"):
+	def __init__(self):
 
 		#init variables go here
-		self.name = None
-		self.var = None
+		self.description = None
+		self.filepath = None
 		self.pickled = False
+		self.params = None
 
-	def read(self, filepath):
+	def load(self, filepath):
 
 		self.filepath = filepath
 
-		# some sort of json.loads(filename) line here?
-
-		# maybe a pickle line here?
+		fparams = open("{}/params.json".format(filepath))
+		self.params = json.load(fparams)
+		self.description = self.params['description']
 
 	def __repr__(self):
-		return "Experiment Object, Name: {}".format(self.name)
+		return "Modle Object, Name: {}".format(self.description)
 
 	def __str__(self):
-		return "\nExperiment Data: \n\n{}\n".format(self.exp)
+		return "Parameter Data: \n{}\n".format(self.params)
 
 # For testing
 def main():
-	if len(sys.argv) < 2:
-		raise Exception("Usage: python experiment.py [exp name] [optional: exp path]")
-	expName = sys.argv[1]
-	if len(sys.argv) > 2:
-		expPath = sys.argv[2]
-		if not expPath.endswith('/'):
-			expPath += "/"
-		expPath += "{}.exp".format(expName)
-	else:
-		expPath = "{}/{}.exp".format(expName, expName)
+	mPath = sys.argv[1]
 
-	e = experiment()
-	e.read(expPath)
+	m = model()
+	m.load(mPath)
 
-	print e
-
-	e.createTrainSet()
-	e.train()
+	print m.params
+	print m.description
+	
+	exit()
 
 if __name__ == "__main__":
 	main()
