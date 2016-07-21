@@ -33,11 +33,13 @@ class model:
 		self.params = json.load(fparams)
 		self.description = self.params['description']
 
+	# Not important. Python object description function
 	def __repr__(self):
-		return "Modle Object, Name: {}".format(self.description)
+		return "Model Object, Name: {}".format(self.description)
 
+	# To string method
 	def __str__(self):
-		return "Parameter Data: \n{}\n".format(self.params)
+		return "{}".format(self.params)
 
 # For testing
 def main():
