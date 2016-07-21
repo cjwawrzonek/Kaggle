@@ -22,5 +22,5 @@
 		"locs":false
 	},
 	"variance": 2,
-	"train_pct": 50
+	"train_pct": 49
 }
