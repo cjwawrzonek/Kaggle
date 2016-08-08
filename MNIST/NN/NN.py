@@ -8,7 +8,7 @@ import random
 import math
 import sys
 
-import utility as util
+from .utility import *
 import numpy as np
 import model as md
 
